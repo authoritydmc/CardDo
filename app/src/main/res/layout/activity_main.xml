@@ -56,8 +56,10 @@
         android:layout_height="match_parent"
         android:text="Update info"
         android:id="@+id/txtView_updateInfo"
-        android:textColor="@color/white"
-
+        android:textColor="@color/textColor"
+        android:background="@color/white"
+        android:clickable="true"
+        android:autoLink="web"
         android:textSize="24sp"/>
 </LinearLayout>
 
