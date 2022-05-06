@@ -62,10 +62,10 @@ checkforUpdate()
                     Toast.makeText(applicationContext,"Update available ${response.body()!!.version}",Toast.LENGTH_LONG).show()
                     Log.d(TAG, "onResponse: version update availabel from ${response.body()!!.downloadURL}")
                   updateTxtView.setVisibility(View.VISIBLE)
-                    updateTxtView.setText("Update version : ${response.body()!!.version} Available from ${response.body()!!.downloadURL} ")
+                    updateTxtView.setText("Current Version:$CURRENT_VERSION \nUpdate version : ${response.body()!!.version} Available from ${response.body()!!.downloadURL} ")
                 }else
                 {
-                    updateTxtView.visibility=View.GONE
+                    updateTxtView.setText("Current Version : $CURRENT_VERSION")
                 }
             }
 
