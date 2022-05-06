@@ -67,44 +67,11 @@ private var str:String="Empty right now";
 
             setText(randomNum.toString());
 //            checkSample()
-         checkforupdate()
+        // checkforupdate()
         }
     }
 
-    private fun checkSample() {
-       retrofitClient.instance.SampleAPI().enqueue(object : Callback<SAMPLEPOKO?> {
-           override fun onResponse(call: Call<SAMPLEPOKO?>, response: Response<SAMPLEPOKO?>) {
-               Toast.makeText(context,response.body().toString(),Toast.LENGTH_LONG
-               ).show()
-               Log.d("RAJ", "onResponse: found response ${response.body().toString()}")
-           }
 
-           override fun onFailure(call: Call<SAMPLEPOKO?>, t: Throwable) {
-               Toast.makeText(context,"Failed to get JSON",Toast.LENGTH_LONG
-               ).show()
-               Log.d("RAJ", "onResponse: found response ${t.message}")
-           }
-       })
-    }
-
-    private fun checkforupdate() {
-        Log.d("RAJ", "onResponse: checking")
-
-        retrofitClient.instance.checkUpdate().enqueue(object : Callback<UpdatePOKO?> {
-            override fun onResponse(call: Call<UpdatePOKO?>, response: Response<UpdatePOKO?>) {
-                Toast.makeText(context,response.body().toString(),Toast.LENGTH_LONG
-                ).show()
-                Log.d("RAJ", "onResponse: found response ${response.body().toString()}")
-            }
-
-            override fun onFailure(call: Call<UpdatePOKO?>, t: Throwable) {
-                Toast.makeText(context,"Failed to get JSON",Toast.LENGTH_LONG
-                ).show()
-                Log.d("RAJ", "onResponse: found response ${t.message}")
-
-            }
-        })
-    }
 
     fun getText():String
 {
