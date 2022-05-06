@@ -42,9 +42,9 @@ private var str:String="Empty right now";
 
     private fun InitMain() {
       txtView.setOnClickListener {
-          Toast.makeText(context,"Card Number Copied to ClipBoard!!",Toast.LENGTH_LONG).show()
+          Toast.makeText(context,"Card Number ${getText()} Copied to ClipBoard!!",Toast.LENGTH_LONG).show()
           var clipboard=context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-         var clip=ClipData.newPlainText("cardnumber"+getText().trim().toString(),getText())
+         var clip=ClipData.newPlainText("cardnumber",getText())
           clipboard.setPrimaryClip(clip)
 
       };
@@ -53,7 +53,7 @@ private var str:String="Empty right now";
           for (i in 1..16 )
           {
               randomNum.append((0..9).random())
-              if (i%4==0)
+              if (i%4==0&& i!=16)
                   randomNum.append("\t")
           }
 
@@ -64,7 +64,7 @@ private var str:String="Empty right now";
 
     fun getText():String
 {
-    return txtView.text.trim().toString()
+    return txtView.text.replace("""[\s,.]""".toRegex(),"").trim().toString()
 }
 
     fun setText(txt:String)
