@@ -6,7 +6,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface api {
-@GET("CardDo/app/src/main/java/com/authoritydmc/carddo/utility/config.json")
+@GET("CardDo/app/src/main/assets/config.json")
 fun checkUpdate():Call<UpdatePOKO>
 
 @GET("posts/1")
