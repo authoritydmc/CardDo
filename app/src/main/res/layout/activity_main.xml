@@ -33,7 +33,7 @@
     <com.authoritydmc.carddo.utility.CardView
         android:layout_width="match_parent"
         android:id="@+id/cardView"
-        app:TEXT="1234 car number "
+        app:TEXT="Click to to copy to clipboard"
         android:layout_weight="5"
         android:layout_height="0dp"/>
 
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit"
-        android:hint="Enter Text here"
+        android:hint="Check clipboard here"
         />
 
     <TextView
