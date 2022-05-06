@@ -5,12 +5,19 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import com.authoritydmc.carddo.R
+import com.authoritydmc.carddo.api.retrofitClient
+import com.authoritydmc.carddo.models.SAMPLEPOKO
+import com.authoritydmc.carddo.models.UpdatePOKO
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.lang.StringBuilder
 
 
@@ -59,7 +66,44 @@ private var str:String="Empty right now";
 
 
             setText(randomNum.toString());
+//            checkSample()
+         checkforupdate()
         }
+    }
+
+    private fun checkSample() {
+       retrofitClient.instance.SampleAPI().enqueue(object : Callback<SAMPLEPOKO?> {
+           override fun onResponse(call: Call<SAMPLEPOKO?>, response: Response<SAMPLEPOKO?>) {
+               Toast.makeText(context,response.body().toString(),Toast.LENGTH_LONG
+               ).show()
+               Log.d("RAJ", "onResponse: found response ${response.body().toString()}")
+           }
+
+           override fun onFailure(call: Call<SAMPLEPOKO?>, t: Throwable) {
+               Toast.makeText(context,"Failed to get JSON",Toast.LENGTH_LONG
+               ).show()
+               Log.d("RAJ", "onResponse: found response ${t.message}")
+           }
+       })
+    }
+
+    private fun checkforupdate() {
+        Log.d("RAJ", "onResponse: checking")
+
+        retrofitClient.instance.checkUpdate().enqueue(object : Callback<UpdatePOKO?> {
+            override fun onResponse(call: Call<UpdatePOKO?>, response: Response<UpdatePOKO?>) {
+                Toast.makeText(context,response.body().toString(),Toast.LENGTH_LONG
+                ).show()
+                Log.d("RAJ", "onResponse: found response ${response.body().toString()}")
+            }
+
+            override fun onFailure(call: Call<UpdatePOKO?>, t: Throwable) {
+                Toast.makeText(context,"Failed to get JSON",Toast.LENGTH_LONG
+                ).show()
+                Log.d("RAJ", "onResponse: found response ${t.message}")
+
+            }
+        })
     }
 
     fun getText():String

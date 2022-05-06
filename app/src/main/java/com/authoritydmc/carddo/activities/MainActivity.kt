@@ -9,6 +9,8 @@ import com.authoritydmc.carddo.models.UpdatePOKO
 import com.authoritydmc.carddo.utility.CardView
 import com.authoritydmc.carddo.utility.UTILS
 import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private  lateinit var binding:ActivityMainBinding
@@ -26,10 +28,9 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        checkforupdate()
+
     }
 
-    private fun checkforupdate() {
-      
-    }
+
+
 }
