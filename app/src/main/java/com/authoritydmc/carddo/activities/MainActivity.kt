@@ -2,7 +2,6 @@ package com.authoritydmc.carddo.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.JsonReader
 import android.util.Log
 import android.widget.Toast
 import com.authoritydmc.carddo.api.retrofitClient
@@ -17,16 +16,15 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+    private val TAG: String?="RAJ"
     private  lateinit var binding:ActivityMainBinding
     private lateinit var cardView:CardView
     private lateinit var cardView2:CardView
 
     companion object{
-        var CURRENT_VERSION="";
+        lateinit var CURRENT_VERSION:String;
     }
-    init {
 
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
@@ -36,16 +34,30 @@ class MainActivity : AppCompatActivity() {
         cardView2=binding.cardView2
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
 
+
+        val json= UTILS.parseJSON(this);
+
+        CURRENT_VERSION=json.version;
 checkforUpdate()
     }
 
     private fun checkforUpdate() {
+        Log.d("RAJ", "checkforUpdate: $CURRENT_VERSION")
         retrofitClient.instance.checkUpdate().enqueue(object : Callback<UpdatePOKO?> {
-            override fun onResponse(call: Call<UpdatePOKO?>, response: Response<UpdatePOKO?>) =
-                Toast.makeText(applicationContext,response.body()?.downloadURL,Toast.LENGTH_LONG).show()
+            override fun onResponse(call: Call<UpdatePOKO?>, response: Response<UpdatePOKO?>)
+            {
+
+                val shouldUpdate=UTILS.versionComparer(CURRENT_VERSION, response.body()!!.version)
+
+                Log.d(TAG, "Should Update: $shouldUpdate")
+                if (shouldUpdate)
+                {
+                    Toast.makeText(applicationContext,"Update available ${response.body()!!.version}",Toast.LENGTH_LONG).show()
+                }
+            }
 
 
 
@@ -57,6 +69,8 @@ checkforUpdate()
             }
         })
     }
+
+
 
 
 }
