@@ -34,7 +34,7 @@ class UTILS {
 
 
         fun versionComparer(currentVersion: String, version: String,): Boolean {
-
+            Log.d(TAG, "versionComparer: $currentVersion $version")
             var shouldUpdate = false
             if (currentVersion.equals(version)) return false
             var cur_arr = currentVersion.split(".")
@@ -42,9 +42,14 @@ class UTILS {
 
             for (i in 0..2) {
                 Log.d(TAG, "versionComparer: ${cur_arr[i]} ${ver_arr[i]}")
-                if (ver_arr[i] >= cur_arr[i]) {
+                if (ver_arr[i] > cur_arr[i]) {
                     shouldUpdate = true
-                } else {
+                    break
+                } else if (ver_arr[i]==cur_arr[i]) {
+                  shouldUpdate=true
+                }
+                else
+                {
                     shouldUpdate = false
                     break
                 }

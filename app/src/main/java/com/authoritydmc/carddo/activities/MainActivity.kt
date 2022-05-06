@@ -3,6 +3,8 @@ package com.authoritydmc.carddo.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.authoritydmc.carddo.api.retrofitClient
 import com.authoritydmc.carddo.databinding.ActivityMainBinding
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private  lateinit var binding:ActivityMainBinding
     private lateinit var cardView:CardView
     private lateinit var cardView2:CardView
+    private lateinit var updateTxtView:TextView
 
     companion object{
         lateinit var CURRENT_VERSION:String;
@@ -32,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         cardView=binding.cardView
         cardView2=binding.cardView2
+        updateTxtView=binding.txtViewUpdateInfo
     }
 
     override fun onResume() {
@@ -45,7 +49,7 @@ checkforUpdate()
     }
 
     private fun checkforUpdate() {
-        Log.d("RAJ", "checkforUpdate: $CURRENT_VERSION")
+        Log.d("RAJ", "Current Version: $CURRENT_VERSION")
         retrofitClient.instance.checkUpdate().enqueue(object : Callback<UpdatePOKO?> {
             override fun onResponse(call: Call<UpdatePOKO?>, response: Response<UpdatePOKO?>)
             {
@@ -56,6 +60,12 @@ checkforUpdate()
                 if (shouldUpdate)
                 {
                     Toast.makeText(applicationContext,"Update available ${response.body()!!.version}",Toast.LENGTH_LONG).show()
+                    Log.d(TAG, "onResponse: version update availabel from ${response.body()!!.downloadURL}")
+                  updateTxtView.setVisibility(View.VISIBLE)
+                    updateTxtView.setText("Update version : ${response.body()!!.version} Available from ${response.body()!!.downloadURL} ")
+                }else
+                {
+                    updateTxtView.visibility=View.GONE
                 }
             }
 

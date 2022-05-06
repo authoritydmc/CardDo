@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     tools:context=".activities.MainActivity">
 
 <LinearLayout
     android:layout_width="match_parent"
+
     android:layout_height="wrap_content"
+    android:id="@+id/lv"
     android:orientation="vertical">
 
     <com.example.creditcardlibrary.view.CustomCreditCard
@@ -44,8 +47,18 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/edit"
         android:hint="Enter Text here"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Update info"
+        android:id="@+id/txtView_updateInfo"
+        android:textColor="@color/black"
+
+        android:textSize="24sp"/>
 </LinearLayout>
 
 </ScrollView>
