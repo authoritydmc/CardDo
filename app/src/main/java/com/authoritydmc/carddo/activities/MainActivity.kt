@@ -1,10 +1,14 @@
-package com.authoritydmc.carddo
+package com.authoritydmc.carddo.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.authoritydmc.carddo.api.retrofitClient
 import com.authoritydmc.carddo.databinding.ActivityMainBinding
+import com.authoritydmc.carddo.models.UpdatePOKO
 import com.authoritydmc.carddo.utility.CardView
+import com.authoritydmc.carddo.utility.UTILS
+import retrofit2.Call
 
 class MainActivity : AppCompatActivity() {
     private  lateinit var binding:ActivityMainBinding
@@ -17,13 +21,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         cardView=binding.cardView
         cardView2=binding.cardView2
+    }
 
+    override fun onStart() {
+        super.onStart()
 
+        checkforupdate()
+    }
 
-//        cardView.setText("This is from main coding ");
-
-
-
-
+    private fun checkforupdate() {
+      
     }
 }
