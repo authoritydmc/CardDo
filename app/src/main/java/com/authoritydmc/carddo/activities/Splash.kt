@@ -62,7 +62,7 @@ class Splash : AppCompatActivity() {
     private fun checkforUpdate() {
         val TAG="RAJ"
         var shouldUpdate :Boolean=false
-        Log.d("RAJ", "Current Version: $CURRENT_VERSION")
+
         try {
             retrofitClient.instance.checkUpdate().enqueue(object : Callback<UpdatePOKO?> {
                 override fun onResponse(call: Call<UpdatePOKO?>, response: Response<UpdatePOKO?>) {
@@ -72,7 +72,7 @@ try {
        shouldUpdate= UTILS.versionComparer(CURRENT_VERSION, response.body()!!.version)
 }catch (e:Exception)
 {
-    Log.e(TAG, "onResponse: Error ${e.message}", )
+    Log.e(TAG, "onResponse: Error ${e.message} Possible due to project Name change/check URL error", )
 routetoMain()
 }
 

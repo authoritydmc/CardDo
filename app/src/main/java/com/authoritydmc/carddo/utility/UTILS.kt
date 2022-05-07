@@ -35,7 +35,7 @@ class UTILS {
 
         fun versionComparer(currentVersion: String, version: String,): Boolean {
 
-
+            Log.d(TAG, "versionComparer: Current Version : $currentVersion got Version=$version")
             var shouldUpdate = false
             if (currentVersion.equals(version)) return false
             var cur_arr = currentVersion.split(".")
