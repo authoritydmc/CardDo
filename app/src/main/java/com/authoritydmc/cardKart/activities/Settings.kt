@@ -1,8 +1,8 @@
-package com.authoritydmc.carddo.activities
+package com.authoritydmc.cardKart.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.authoritydmc.carddo.R
+import com.authoritydmc.cardKart.R
 
 class Settings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

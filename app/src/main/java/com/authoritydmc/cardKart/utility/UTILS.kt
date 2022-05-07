@@ -1,8 +1,8 @@
-package com.authoritydmc.carddo.utility
+package com.authoritydmc.cardKart.utility
 
 import android.content.Context
 import android.util.Log
-import com.authoritydmc.carddo.models.UpdatePOKO
+import com.authoritydmc.cardKart.models.UpdatePOKO
 import com.google.gson.Gson
 import java.io.InputStream
 

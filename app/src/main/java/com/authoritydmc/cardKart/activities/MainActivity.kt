@@ -1,25 +1,10 @@
-package com.authoritydmc.carddo.activities
+package com.authoritydmc.cardKart.activities
 
-import android.graphics.Color
-import android.graphics.fonts.Font
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.util.Size
-import android.util.TypedValue
-import android.view.View
 import android.widget.TextView
-import android.widget.Toast
-import com.authoritydmc.carddo.api.retrofitClient
-import com.authoritydmc.carddo.databinding.ActivityMainBinding
-import com.authoritydmc.carddo.models.UpdatePOKO
-import com.authoritydmc.carddo.utility.CardView
-import com.authoritydmc.carddo.utility.UTILS
-import com.google.gson.Gson
-import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.authoritydmc.cardKart.databinding.ActivityMainBinding
+import com.authoritydmc.cardKart.utility.CardView
 
 class MainActivity : AppCompatActivity() {
     private val TAG: String?="RAJ"

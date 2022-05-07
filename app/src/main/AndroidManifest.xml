@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.authoritydmc.carddo">
+    package="com.authoritydmc.cardKart">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CardDo">
         <activity
-            android:name=".activities.UpdateActivity"
+            android:name="com.authoritydmc.cardKart.activities.UpdateActivity"
             android:theme="@style/Theme.CardDo.NoactionBar"
             android:exported="false" />
         <activity
-            android:name=".activities.Settings"
+            android:name="com.authoritydmc.cardKart.activities.Settings"
             android:exported="false" />
         <activity
-            android:name=".activities.Splash"
+            android:name="com.authoritydmc.cardKart.activities.Splash"
             android:exported="true"
             android:theme="@style/Theme.CardDo.NoactionBar">
             <intent-filter>
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.authoritydmc.cardKart.activities.MainActivity"
             android:exported="false"></activity>
     </application>
 

@@ -34,14 +34,14 @@
         app:scrBackground="@drawable/cbimage"
         app:year="2041" />
 
-    <com.authoritydmc.carddo.utility.CardView
+    <com.authoritydmc.cardKart.utility.CardView
         android:layout_width="match_parent"
         android:id="@+id/cardView"
         app:TEXT="Click to to copy to clipboard"
         android:layout_weight="5"
         android:layout_height="0dp"/>
 
-    <com.authoritydmc.carddo.utility.CardView
+    <com.authoritydmc.cardKart.utility.CardView
         android:layout_width="match_parent"
         android:id="@+id/cardView2"
 

@@ -1,18 +1,14 @@
-package com.authoritydmc.carddo.activities
+package com.authoritydmc.cardKart.activities
 
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
-import com.authoritydmc.carddo.R
-import com.authoritydmc.carddo.api.retrofitClient
-import com.authoritydmc.carddo.databinding.ActivityMainBinding
-import com.authoritydmc.carddo.databinding.ActivityUpdateBinding
-import com.authoritydmc.carddo.models.UpdatePOKO
-import com.authoritydmc.carddo.utility.UTILS
+import com.authoritydmc.cardKart.api.retrofitClient
+import com.authoritydmc.cardKart.databinding.ActivityUpdateBinding
+import com.authoritydmc.cardKart.models.UpdatePOKO
+import com.authoritydmc.cardKart.utility.UTILS
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

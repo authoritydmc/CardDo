@@ -1,6 +1,6 @@
-package com.authoritydmc.carddo.api
+package com.authoritydmc.cardKart.api
 
-import com.authoritydmc.carddo.utility.UTILS
+import com.authoritydmc.cardKart.utility.UTILS
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

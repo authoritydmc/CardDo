@@ -1,4 +1,4 @@
-package com.authoritydmc.carddo.models
+package com.authoritydmc.cardKart.models
 
 data class SAMPLEPOKO(
     val body: String,

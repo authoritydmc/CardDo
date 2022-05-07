@@ -1,7 +1,7 @@
-package com.authoritydmc.carddo.api
+package com.authoritydmc.cardKart.api
 
-import com.authoritydmc.carddo.models.SAMPLEPOKO
-import com.authoritydmc.carddo.models.UpdatePOKO
+import com.authoritydmc.cardKart.models.SAMPLEPOKO
+import com.authoritydmc.cardKart.models.UpdatePOKO
 import retrofit2.Call
 import retrofit2.http.GET
 

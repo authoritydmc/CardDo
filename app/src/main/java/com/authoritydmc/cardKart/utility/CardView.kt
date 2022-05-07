@@ -1,23 +1,14 @@
-package com.authoritydmc.carddo.utility
+package com.authoritydmc.cardKart.utility
 
-import android.R.attr.label
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
-import com.authoritydmc.carddo.R
-import com.authoritydmc.carddo.api.retrofitClient
-import com.authoritydmc.carddo.models.SAMPLEPOKO
-import com.authoritydmc.carddo.models.UpdatePOKO
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.authoritydmc.cardKart.R
 import java.lang.StringBuilder
 
 
