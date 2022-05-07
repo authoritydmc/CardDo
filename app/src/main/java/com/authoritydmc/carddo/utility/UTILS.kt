@@ -34,22 +34,28 @@ class UTILS {
 
 
         fun versionComparer(currentVersion: String, version: String,): Boolean {
-            Log.d(TAG, "versionComparer: $currentVersion $version")
+
+
             var shouldUpdate = false
             if (currentVersion.equals(version)) return false
             var cur_arr = currentVersion.split(".")
             var ver_arr = version.split(".")
 
             for (i in 0..2) {
-                Log.d(TAG, "versionComparer: ${cur_arr[i]} ${ver_arr[i]}")
-                if (ver_arr[i] > cur_arr[i]) {
+                if ((ver_arr[i].toInt()) > cur_arr[i].toInt()) {
+                    Log.d(TAG, "versionComparer: version :${ver_arr[i]} current: ${cur_arr[i]} greater")
+
                     shouldUpdate = true
                     break
-                } else if (ver_arr[i]==cur_arr[i]) {
-                  shouldUpdate=true
+                } else if (ver_arr[i].toInt()==cur_arr[i].toInt()) {
+                    Log.d(TAG, "versionComparer: version :${ver_arr[i]} current: ${cur_arr[i]} same")
+
+                    shouldUpdate=true
                 }
                 else
                 {
+                    Log.d(TAG, "versionComparer: version :${ver_arr[i]} current: ${cur_arr[i]} failed")
+
                     shouldUpdate = false
                     break
                 }
