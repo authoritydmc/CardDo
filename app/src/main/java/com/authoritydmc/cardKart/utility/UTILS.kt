@@ -11,7 +11,7 @@ class UTILS {
 
 
     companion object {
-        private val TAG: String?="RAJ"
+     val TAG: String?="RAJ"
         final val UPDATE_CHECK_URL: String = "https://authoritydmc.github.io/";
         val PLACEHOLDERAPI = "https://jsonplaceholder.typicode.com/"
 

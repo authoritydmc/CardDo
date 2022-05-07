@@ -2,6 +2,8 @@
 <resources>
     <declare-styleable name="CardView">
         <attr name="TEXT" format="string"/>
+        <attr name="LOGO" format="reference"/>
+        <attr name="card_bg" format="reference"/>
 
     </declare-styleable>
 

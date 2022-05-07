@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+android:background="@drawable/splash_bg"
     android:orientation="vertical"
     tools:context=".activities.MainActivity">
 
@@ -19,33 +19,30 @@
     android:orientation="vertical"
     android:id="@+id/content_main">
 
-    <com.example.creditcardlibrary.view.CustomCreditCard
-        android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardType="VISA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188"
-        app:month="JUNE"
-        app:scrBackground="@drawable/cbimage"
-        app:year="2041" />
+
 
     <com.authoritydmc.cardKart.utility.CardView
         android:layout_width="match_parent"
         android:id="@+id/cardView"
-        app:TEXT="Click to to copy to clipboard"
+        app:TEXT="Click to  copy to clipboard"
+        app:LOGO="@drawable/logo_visa"
+        app:card_bg="@color/backgroundVisa"
         android:layout_weight="5"
         android:layout_height="0dp"/>
 
     <com.authoritydmc.cardKart.utility.CardView
         android:layout_width="match_parent"
         android:id="@+id/cardView2"
+        app:LOGO="@drawable/logo_amex"
 
-        app:TEXT="4622 Megaton "
+        app:TEXT="4622 4502 8745 6945 "
+        android:layout_height="match_parent"/>
+    <com.authoritydmc.cardKart.utility.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/cardView3"
+  app:card_bg="@color/teal_200"
+
+        app:TEXT="Click on Card Logo for new number"
         android:layout_height="match_parent"/>
 
     <EditText

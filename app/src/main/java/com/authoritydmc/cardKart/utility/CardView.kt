@@ -4,11 +4,13 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.util.AttributeSet
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.util.Log
+import android.widget.*
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.graphics.drawable.toDrawable
 import com.authoritydmc.cardKart.R
+import com.authoritydmc.cardKart.utility.UTILS.Companion.TAG
 import java.lang.StringBuilder
 
 
@@ -16,21 +18,36 @@ class  CardView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
 ) : LinearLayout(context, attrs) {
     private  var txtView:TextView
-    private var btnView:Button
-private var str:String="Empty right now";
+
+    private var frontLogo:ImageView
+    private var cardBG:ConstraintLayout
+
+    private var str:String="Empty right now";
 
     init {
-     inflate(context, R.layout.cardview, this)
-        txtView=rootView.findViewById(R.id.codeView_textView)
-        btnView=rootView.findViewById(R.id.cardView_btn)
-        btnView.setText("Randomize Card number")
+     inflate(context, R.layout.cardviewnew, this)
+        txtView=rootView.findViewById(R.id.cardNumber)
+
+        frontLogo=rootView.findViewById(R.id.cardFrontLogo)
+        cardBG=rootView.findViewById(R.id.cardFront)
+
        if (attrs!=null)
        {
            val a=context.obtainStyledAttributes(attrs,R.styleable.CardView)
            val txtfrm=a.getString(R.styleable.CardView_TEXT)
 
-           txtView.setText(txtfrm
-           )
+           txtView.setText(txtfrm)
+           val logo_d:Int=a.getResourceId(R.styleable.CardView_LOGO,-1)
+           Log.d(TAG, "CARD LOGO $logo_d")
+           if (logo_d!=-1)
+           frontLogo.setImageResource(logo_d)
+
+           val card_bg_d:Int=a.getResourceId(R.styleable.CardView_card_bg,-1)
+           Log.d(TAG, "CARD LOGO $card_bg_d")
+           if (card_bg_d!=-1)
+              cardBG.background=card_bg_d.toDrawable()
+
+
 
        }
 
@@ -46,7 +63,7 @@ private var str:String="Empty right now";
           clipboard.setPrimaryClip(clip)
 
       };
-        btnView.setOnClickListener{
+        frontLogo.setOnClickListener{
             val randomNum:StringBuilder= StringBuilder();
           for (i in 1..16 )
           {
