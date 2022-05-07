@@ -44,6 +44,21 @@ android:background="@drawable/splash_bg"
 
         app:TEXT="Click on Card Logo for new number"
         android:layout_height="match_parent"/>
+    <com.authoritydmc.cardKart.utility.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/cardView31"
+        app:card_bg="@color/teal_200"
+
+        app:TEXT="Click on Card Logo for new number"
+        android:layout_height="match_parent"/>
+    <com.authoritydmc.cardKart.utility.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/cardView32"
+        app:card_bg="@color/teal_200"
+app:LOGO="@drawable/logo_mastercard"
+        android:background="@drawable/background_mastercard"
+        app:TEXT="Click on Card Logo for new number"
+        android:layout_height="match_parent"/>
 
     <EditText
         android:layout_width="match_parent"
