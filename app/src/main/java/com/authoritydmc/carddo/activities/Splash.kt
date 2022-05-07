@@ -70,11 +70,15 @@ class Splash : AppCompatActivity() {
                 Log.d(TAG, "Should Update: $shouldUpdate")
                 if (shouldUpdate)
                 {
+
+                    Toast.makeText(applicationContext,"New Version found ${response.body()!!.version.toString()}",Toast.LENGTH_SHORT).show()
                     routetoUpdate()
 
                 }else
                 {
-                  routetoMain()
+                    Toast.makeText(applicationContext,"No update found",Toast.LENGTH_SHORT).show()
+
+                    routetoMain()
 
                 }
             }
