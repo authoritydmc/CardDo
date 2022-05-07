@@ -16,6 +16,7 @@ import com.authoritydmc.carddo.utility.UTILS
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 
 class Splash : AppCompatActivity() {
 
@@ -60,35 +61,49 @@ class Splash : AppCompatActivity() {
 
     private fun checkforUpdate() {
         val TAG="RAJ"
+        var shouldUpdate :Boolean=false
         Log.d("RAJ", "Current Version: $CURRENT_VERSION")
-        retrofitClient.instance.checkUpdate().enqueue(object : Callback<UpdatePOKO?> {
-            override fun onResponse(call: Call<UpdatePOKO?>, response: Response<UpdatePOKO?>)
-            {
+        try {
+            retrofitClient.instance.checkUpdate().enqueue(object : Callback<UpdatePOKO?> {
+                override fun onResponse(call: Call<UpdatePOKO?>, response: Response<UpdatePOKO?>) {
+try {
 
-                val shouldUpdate= UTILS.versionComparer(CURRENT_VERSION, response.body()!!.version)
 
-                Log.d(TAG, "Should Update: $shouldUpdate")
-                if (shouldUpdate)
-                {
+       shouldUpdate= UTILS.versionComparer(CURRENT_VERSION, response.body()!!.version)
+}catch (e:Exception)
+{
+    Log.e(TAG, "onResponse: Error ${e.message}", )
+routetoMain()
+}
 
-                    Toast.makeText(applicationContext,"New Version found ${response.body()!!.version.toString()}",Toast.LENGTH_SHORT).show()
-                    routetoUpdate()
+                    Log.d(TAG, "Should Update: $shouldUpdate")
+                    if (shouldUpdate) {
 
-                }else
-                {
-                    Toast.makeText(applicationContext,"No update found",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            applicationContext,
+                            "New Version found ${response.body()!!.version.toString()}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        routetoUpdate()
+
+                    } else {
+                        Toast.makeText(applicationContext, "No update found", Toast.LENGTH_SHORT)
+                            .show()
+
+                        routetoMain()
+
+                    }
+                }
+
+
+                override fun onFailure(call: Call<UpdatePOKO?>, t: Throwable) {
 
                     routetoMain()
-
                 }
-            }
-
-
-
-            override fun onFailure(call: Call<UpdatePOKO?>, t: Throwable) {
-
-              routetoMain()
-            }
-        })
+            })
+        }catch (i:Exception)
+        {
+            routetoMain()
+        }
     }
 }
