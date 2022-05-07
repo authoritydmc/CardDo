@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/rajdu/AndroidStudioProjects/CardDo/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/rajdu/AndroidStudioProjects/CardDo/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/rajdu/AndroidStudioProjects/CardDo/app/src/main/res/layout/activity_settings.xml" value="0.25" />
+        <entry key="..\:/Users/rajdu/AndroidStudioProjects/CardDo/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/Users/rajdu/AndroidStudioProjects/CardDo/app/src/main/res/layout/activity_update.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/rajdu/AndroidStudioProjects/CardDo/app/src/main/res/layout/cardview.xml" value="0.25" />
+        <entry key="..\:/Users/rajdu/AndroidStudioProjects/CardDo/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.147" />
+        <entry key="..\:/Users/rajdu/AndroidStudioProjects/CardDo/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.147" />
       </map>
     </option>
   </component>
